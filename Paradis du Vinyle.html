@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paradis du Vinyle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-image: url('Inserir um título (2).png');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #000;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px;
+            display: block;
+            font-size: 1.2em;
+        }
+
+        nav ul li a:hover {
+            background-color: #e74c3c;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+        }
+
+        .intro h2 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        .intro p {
+            margin-top: 30px;
+            font-size: 1.2em;
+        }
+
+        .produtos {
+            padding: 50px 20px;
+            background-color: #fff;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px; /* Espaçamento entre os produtos */
+        }
+
+        .produto {
+            text-align: center;
+            width: 300px; /* Largura fixa para os produtos */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s;
+        }
+
+        .produto img {
+            max-width: 100%;
+            height: auto;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .produto h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+            color: #e74c3c;
+        }
+
+        .produto p {
+            font-size: 1.4em; /* Aumenta o tamanho da fonte */
+            font-weight: bold; /* Define o texto como negrito */
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #c0392b;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Ícone de carrinho fixo */
+        .cart-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e74c3c;
+            color: #fff;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            z-index: 1000;
+        }
+
+        .cart-icon span {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: #fff;
+            color: #e74c3c;
+            border-radius: 50%;
+            padding: 5px 10px;
+            font-size: 1em;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .produtos {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Somente a imagem de fundo será exibida -->
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#produtos">Produtos</a></li>
+            <li><a href="#carrinho">Carrinho</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="intro">
+        <h2>Bem-vindo</h2>
+        <p>Explore a nossa coleção exclusiva de vinis clássicos e modernos!</p>
+    </section>
+
+    <section id="produtos" class="produtos">
+        <div class="produto">
+            <img src="image.png" alt="Taylor Swift – Speak Now (Taylor’s Version – Orchid Marbled Vinyl)">
+            <h3>Taylor Swift – Speak Now (Taylor’s Version – Orchid Marbled Vinyl)</h3>
+            <p>R$ 475,00</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="KatyPerryDisc.png" alt="Vinil Katy Perry - One Of The Boys (LP Pink)">
+            <h3>Vinil Katy Perry - One Of The Boys (LP Pink)</h3>
+            <p>R$ 349,00</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="DeftonesDisc.png" alt="Deftones: Diamond Eyes Vinyl LP">
+            <h3>Deftones: Diamond Eyes Vinyl LP</h3>
+            <p>R$ 479,90</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="DiscoWeeknd.png" alt="Starboy - The Weeknd (LP/Vinil)">
+            <h3>Starboy - The Weeknd (LP/Vinil)</h3>
+            <p>R$ 410,00</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="LanaDisc.jpg" alt="Lana Del Rey - Blue Banisters LP">
+            <h3>Lana Del Rey - Blue Banisters LP</h3>
+            <p>R$ 399,80</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="Adele25.jpg" alt="Vinil Adele - 25 - LP">
+            <h3>Vinil Adele - 25 - LP</h3>
+            <p>R$ 449,00</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="Adele30.jpg" alt="Vinil Adele - 30 - LP">
+            <h3>Vinil Adele - 30 - LP</h3>
+            <p>R$ 449,00</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="HozierDisc.jpg" alt="Unreal Unearth - Hozier (LP/Vinil)">
+            <h3>Unreal Unearth - Hozier (LP/Vinil)</h3>
+            <p>R$ 349,80</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="PlanetDisc.jpg" alt="Planet Her (Deluxe Edition) Vinil">
+            <h3>Planet Her (Deluxe Edition) Vinil</h3>
+            <p>R$ 198,94</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="TimMaiaDisc.jpg" alt="Lp Tim Maia - 1972 - Vinil">
+            <h3>Lp Tim Maia - 1972 - Vinil</h3>
+            <p>R$ 208,05</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="TravisScootDisc.jpg" alt="Travis Scott - Utopia 2 Disk Vinyl [Limited Edition - Cover 1]">
+            <h3>Travis Scott - Utopia 2 Disk Vinyl [Limited Edition - Cover 1]</h3>
+            <p>R$ 489,90</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="produto">
+            <img src="BillieDisc.jpg" alt="Happier Than Ever (Limited Edition) (Golden Yellow Vinyl)">
+            <h3>Happier Than Ever (Limited Edition) (Golden Yellow Vinyl)</h3>
+            <p>R$ 625,00</p>
+            <button class="button" onclick="addToCart()">Adicionar ao Carrinho</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Paradis du Vinyle. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="cart-icon" onclick="viewCart()">
+        <span id="cart-count">0</span>
+        🛒
+    </div>
+
+    <script>
+        let cartCount = 0;
+
+        function addToCart() {
+            cartCount++;
+            document.getElementById('cart-count').textContent = cartCount;
+        }
+
+        function viewCart() {
+            alert('Carrinho de compras ainda não implementado.');
+        }
+    </script>
+</body>
+</html>
